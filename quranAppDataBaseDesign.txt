@@ -1,0 +1,91 @@
+
+Entities and Their Attributes:
+
+1.	Users
+o	user_id (Primary Key)
+o	username (Unique)
+o	password_hash
+o	email (Unique)
+o	role (e.g., "teacher", "student")
+o	profile_picture_url
+o	date_created
+o	last_login
+
+2.	QuranVerses
+o	verse_id (Primary Key)
+o	surah_number (integer)
+o	verse_number (integer)
+o	arabic_text (text)
+o	swahili_translation (text)
+o	swahili_explanation (text)
+o	audio_url (text)
+
+
+3.	Lessons
+o	lesson_id (Primary Key)
+o	title (text)
+o	description (text)
+o	language (enum: "Swahili", "Arabic")
+o	created_at (timestamp)
+o	updated_at (timestamp)
+o	
+4.	LessonQuranVerse
+o	lesson_verse_id (Primary Key)
+o	lesson_id (Foreign Key to Lessons)
+o	verse_id (Foreign Key to QuranVerses)
+o	verse_order (integer)
+
+
+5.	Exercises
+o	exercise_id (Primary Key)
+o	lesson_id (Foreign Key to Lessons)
+o	title (text)
+o	type (enum: "quiz", "fill-in-the-blank", "true-false")
+o	content (JSON or text)
+o	created_at (timestamp)
+
+
+6.	ExerciseAnswers
+o	answer_id (Primary Key)
+o	exercise_id (Foreign Key to Exercises)
+o	user_id (Foreign Key to Users)
+o	answer_content (JSON or text)
+o	is_correct (boolean)
+o	submitted_at (timestamp)
+
+
+7.	Feedback
+o	feedback_id (Primary Key)
+o	lesson_id (Foreign Key to Lessons)
+o	user_id (Foreign Key to Users)
+o	message (text)
+o	created_at (timestamp)
+
+
+8.	ProgressTracking
+o	progress_id (Primary Key)
+o	user_id (Foreign Key to Users)
+o	lesson_id (Foreign Key to Lessons)
+o	completion_status (enum: "completed", "in progress", "not started")
+o	score (integer)
+o	updated_at (timestamp)
+o	
+
+
+2. Relationships Between Entities
+
+•	Users ↔ ProgressTracking: One-to-Many relationship, as each user can have progress records for multiple lessons.
+
+•	Lessons ↔ LessonQuranVerse: One-to-Many relationship, as each lesson can include multiple Quranic verses.
+
+•	QuranVerses ↔ LessonQuranVerse: Many-to-One relationship, where each verse can be part of multiple lessons.
+
+•	Lessons ↔ Exercises: One-to-Many relationship, where a lesson can have multiple exercises.
+
+•	Exercises ↔ ExerciseAnswers: One-to-Many relationship, where each exercise can have multiple answers submitted by students.
+
+•	Users ↔ ExerciseAnswers: One-to-Many relationship, as each user can submit answers for multiple exercises.
+
+•	Lessons ↔ Feedback: One-to-Many relationship, where feedback can be provided for each lesson.
+
+•	Users ↔ Feedback: One-to-Many relationship, as users (teachers and students) can give feedback on lessons.
