@@ -72,6 +72,15 @@ o	updated_at (timestamp)
 o	
 
 
+9.  Logs
+o log_id(Primary Key)
+o user_id (Foreign Key referencing User entity)
+o activityType(string) (lesson_start, quiz_submitted)
+o timestamp(DateTime) The current time.
+o lesson_id (Foreign Key referencing Lesson entity)
+o quiz_id (Foreign Key referencing Quiz(Exercises) entity)
+o description(text) (An optional message, like "Successfully finished lesson 5.)
+
 2. Relationships Between Entities
 
 •	Users ↔ ProgressTracking: One-to-Many relationship, as each user can have progress records for multiple lessons.
