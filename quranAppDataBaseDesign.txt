@@ -83,6 +83,10 @@ o description(text) (An optional message, like "Successfully finished lesson 5.)
 
 2. Relationships Between Entities
 
+•	Users ↔ Logs: One-to-Many relationship, as each user can have log records for multiple activities.
+
+•	Lessons ↔ Logs: One-to-Many relationship, a lesson can have multiple log records(eg. Query Select * Logs where Lesson_id = # ;say id for tajweed)
+
 •	Users ↔ ProgressTracking: One-to-Many relationship, as each user can have progress records for multiple lessons.
 
 •	Lessons ↔ LessonQuranVerse: One-to-Many relationship, as each lesson can include multiple Quranic verses.
