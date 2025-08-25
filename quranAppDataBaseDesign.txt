@@ -85,7 +85,7 @@ o description(text) (An optional message, like "Successfully finished lesson 5.)
 10.  Scheduler
 o Schedule_id (Primary key)
 o User_id (Foreign Key referencing Users)
-o	Role ("teacher", student )
+o	Role ("teacher", "student")
 o	Message (text)
 o Lesson_id (Foreign Key referencing Uselesson)
 o Title (Text) (Lesson title)
