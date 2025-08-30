@@ -88,7 +88,6 @@ o User_id (Foreign Key referencing Users)
 o Role ("teacher", "student")
 o Message (text)
 o Lesson_id (Foreign Key referencing Uselesson)
-o Title (Text) (Lesson title)
 o date_time (timestamp)
 o Start_time (timestamp) (Specifying starttime)
 o End_time (timestamp) (lesson end time)
@@ -99,7 +98,23 @@ o Progresstrack_id (Foreign Key referencing % of lesson completed)
 
 2. Relationships Between Entities
 
-•	scheduler ↔ user: One-to-Many relationship, as each user can have multiple lessons schedule in a day, week or month.
+•	user ↔ scheduler : One-to-Many relationship, as each user can have multiple lessons schedule in a day, week or month.
+
+•	Lesson ↔ Schedule One-to-Many: A single lesson can be scheduled multiple times by different users or at different times.
+
+•	Schedule ↔ Progresstrack Many-to-One: Each schedule may link to one progress tracking entry, but a progress entry can be reused across multiple schedules (if tracking is lesson-based).
+
+• Users ↔ Progresstrack One-to-Many: Each user can have multiple progress entries for different lessons. 
+
+• Lesson ↔ Progresstrack One-to-Many: Each lesson can have multiple progress entries from different users.
+
+• Roles ↔ Users One-to-Many: Each role (e.g., "teacher") can be assigned to many users (Many users can be assigned as student or teacher role)
+
+• Roles ↔ Schedule One-to-Many: Each role can appear in many scheduled lessons. (Student or teacher role can have several schedule in a day, week or month)
+
+• Status ↔ Schedule One-to-Many: Each status type (e.g., "scheduled", "completed") can be assigned to multiple schedule entries.
+
+• Lesson ↔ Schedule ↔ Status One-to-Many-to-One relationship, (Lesson one ↔ Shedule many, Each Schedule entry can have  one Status (e.g., "Scheduled", "Completed", "Missed")).
 
 •	Users ↔ Logs: One-to-Many relationship, as each user can have log records for multiple activities.
 
