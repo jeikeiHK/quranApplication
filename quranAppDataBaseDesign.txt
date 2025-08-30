@@ -108,9 +108,9 @@ o Progresstrack_id (Foreign Key referencing % of lesson completed)
 
 • Lesson ↔ Progresstrack One-to-Many: Each lesson can have multiple progress entries from different users.
 
-• Roles ↔ Users One-to-Many: Each role (e.g., "teacher") can be assigned to many users (Many users can be assigned as student or teacher role)
+• Roles ↔ Users One-to-Many: Each role (e.g., "teacher") can be assigned to many users (Many users can be assigned as student or teacher role).
 
-• Roles ↔ Schedule One-to-Many: Each role can appear in many scheduled lessons. (Student or teacher role can have several schedule in a day, week or month)
+• Roles ↔ Schedule One-to-Many: Each role can appear in many scheduled lessons. (Student or teacher role can have several schedule in a day, week or month).
 
 • Status ↔ Schedule One-to-Many: Each status type (e.g., "scheduled", "completed") can be assigned to multiple schedule entries.
 
