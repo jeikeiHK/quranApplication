@@ -104,17 +104,17 @@ o Progresstrack_id (Foreign Key referencing % of lesson completed)
 
 •	Schedule ↔ Progresstrack Many-to-One: Each schedule may link to one progress tracking entry, but a progress entry can be reused across multiple schedules (if tracking is lesson-based).
 
-•  Users ↔ Progresstrack One-to-Many: Each user can have multiple progress entries for different lessons. 
+• Users ↔ Progresstrack One-to-Many: Each user can have multiple progress entries for different lessons. 
 
-•  Lesson ↔ Progresstrack One-to-Many: Each lesson can have multiple progress entries from different users.
+• Lesson ↔ Progresstrack One-to-Many: Each lesson can have multiple progress entries from different users.
 
-•  Roles ↔ Users One-to-Many: Each role (e.g., "teacher") can be assigned to many users (Many users can be assigned as student or teacher role)
+• Roles ↔ Users One-to-Many: Each role (e.g., "teacher") can be assigned to many users (Many users can be assigned as student or teacher role)
 
-•  Roles ↔ Schedule One-to-Many: Each role can appear in many scheduled lessons. (Student or teacher role can have several schedule in a day, week or month)
+• Roles ↔ Schedule One-to-Many: Each role can appear in many scheduled lessons. (Student or teacher role can have several schedule in a day, week or month)
 
-•  Status ↔ Schedule One-to-Many: Each status type (e.g., "scheduled", "completed") can be assigned to multiple schedule entries.
+• Status ↔ Schedule One-to-Many: Each status type (e.g., "scheduled", "completed") can be assigned to multiple schedule entries.
 
-•  Lesson ↔ Schedule ↔ Status One-to-Many-to-One relationship, (Lesson one ↔ Shedule many, Each Schedule entry can have  one Status (e.g., "Scheduled", "Completed", "Missed")).
+• Lesson ↔ Schedule ↔ Status One-to-Many-to-One relationship, (Lesson one ↔ Shedule many, Each Schedule entry can have  one Status (e.g., "Scheduled", "Completed", "Missed")).
 
 •	Users ↔ Logs: One-to-Many relationship, as each user can have log records for multiple activities.
 
