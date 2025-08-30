@@ -98,11 +98,11 @@ o Progresstrack_id (Foreign Key referencing % of lesson completed)
 
 2. Relationships Between Entities
 
-•	 user ↔ scheduler : One-to-Many relationship, as each user can have multiple lessons schedule in a day, week or month.
+•	User ↔ scheduler : One-to-Many relationship, as each user can have multiple lessons schedule in a day, week or month.
 
-•	 Lesson ↔ Schedule One-to-Many: A single lesson can be scheduled multiple times by different users or at different times.
+•	Lesson ↔ Schedule One-to-Many: A single lesson can be scheduled multiple times by different users or at different times.
 
-•	 Schedule ↔ Progresstrack Many-to-One: Each schedule may link to one progress tracking entry, but a progress entry can be reused across multiple schedules (if tracking is lesson-based).
+•	Schedule ↔ Progresstrack Many-to-One: Each schedule may link to one progress tracking entry, but a progress entry can be reused across multiple schedules (if tracking is lesson-based).
 
 •  Users ↔ Progresstrack One-to-Many: Each user can have multiple progress entries for different lessons. 
 
