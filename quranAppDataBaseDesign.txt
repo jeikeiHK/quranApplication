@@ -118,7 +118,7 @@ o Progresstrack_id (Foreign Key referencing % of lesson completed)
 
 •	Users ↔ Logs: One-to-Many relationship, as each user can have log records for multiple activities.
 
-•	Lessons ↔ Logs: One-to-Many relationship, a lesson can have multiple log records(eg. Query Select * Logs where Lesson_id = # ;say id for tajweed)
+•	Lessons ↔ Logs: One-to-Many relationship, a lesson can have multiple log records(eg. Query Select * Logs where Lesson_id = # ;say id for tajweed).
 
 •	Users ↔ ProgressTracking: One-to-Many relationship, as each user can have progress records for multiple lessons.
 
